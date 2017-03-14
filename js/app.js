@@ -48,4 +48,4 @@ $password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent).
 $confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent).keyup(enableSubmitEvent);
 
 // Executed on page load
-canSubmit();
+enableSubmitEvent();
