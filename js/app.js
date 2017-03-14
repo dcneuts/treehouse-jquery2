@@ -2,17 +2,25 @@
 // Solution: Hide and show at the right time
 
 // Hide the hints based on character length and validation
+$("form span").hide();
 
-    // Validate password characters
+// Validate password characters
+$("#password").focus(function() {
 
     // Hide if valid
+    if ($(this).val().length > 8) {
+        $(this).next().hide();
+        // Else show the hint for password
+    } else {
+        $(this).next().show();
+    }
 
-    // Else show the hint for password
+});
 
 // Confirmation box
 
-    // Check for password match in both boxes
+// Check for password match in both boxes
 
-        // Hide hint if matched
+// Hide hint if matched
 
-        // Show hint if not matched
+// Show hint if not matched
