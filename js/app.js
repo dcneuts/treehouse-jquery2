@@ -37,8 +37,15 @@ function confirmPasswordEvent(){
     }
 }
 
+function enableSubmitEvent(){
+    $("#submit").prop("disabled", !canSubmit())
+}
+
 // Validate password characters
-$password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent);
+$password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent).keyup(enableSubmitEvent);
 
 // Confirmation box
-$confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
+$confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent).keyup(enableSubmitEvent);
+
+// Executed on page load
+canSubmit();
