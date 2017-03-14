@@ -14,7 +14,9 @@ function arePasswordsMatching(){
     return $password.val() === $confirmPassword.val();
 }
 
-
+function canSubmit() {
+    return isPasswordValid() && arePasswordsMatching();
+}
 
 function passwordEvent(){
     if (isPasswordValid()){
@@ -36,7 +38,7 @@ function confirmPasswordEvent(){
 }
 
 // Validate password characters
-$password.focus(passwordEvent).keyup(passwordEvent).focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
+$password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent);
 
 // Confirmation box
 $confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
