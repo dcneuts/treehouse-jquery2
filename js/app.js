@@ -4,18 +4,16 @@
 // Hide the hints based on character length and validation
 $("form span").hide();
 
-// Validate password characters
-$("#password").focus(function() {
-
-    // Hide if valid
+function passwordEvent(){
     if ($(this).val().length > 8) {
         $(this).next().hide();
-        // Else show the hint for password
     } else {
         $(this).next().show();
     }
+}
 
-});
+// Validate password characters
+$("#password").focus(passwordEvent).keyup(passwordEvent);
 
 // Confirmation box
 
